@@ -37,7 +37,7 @@ struct IMCView: View {
                 IntContainer(text: "Edad", value: $age)
                 IntContainer(text: "Peso", value: $weight)
             }
-            IMCCalculateButton()
+            IMCCalculateButton(weight: Float(weight), height: height)
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -170,9 +170,13 @@ struct IntContainer: View {
 }
 
 struct IMCCalculateButton:View {
+    
+    let weight:Float
+    let height:Float
+    
     var body: some View {
         NavigationStack {
-            NavigationLink(destination: {}) {
+            NavigationLink(destination: {IMCResult(weight: weight, height: height)}) {
                 Text("Calcular IMC")
                     .frame(maxWidth: .infinity, maxHeight: 100)
                     .font(.title)
