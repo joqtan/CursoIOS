@@ -15,7 +15,9 @@ struct MenuView: View {
                     NavigationLink(destination: IMCView()) {
                         Text("IMC Calculator")
                     }
-                    Text("App2")
+                    NavigationLink(destination: SuperHeroFinder()) {
+                        Text("SuperHero Finder")
+                    }
                     Text("App3")
                     Text("App4")
                 }
